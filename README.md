@@ -17,8 +17,13 @@ A responsive personal portfolio website for George (`benjoji77`), a Computer Sci
 
 ## Project links
 
-- Repository: [github.com/georgebenedict77/personal-portfolio-website](https://github.com/georgebenedict77/personal-portfolio-website)
 - Planned live site: [georgebenedict77.github.io/personal-portfolio-website](https://georgebenedict77.github.io/personal-portfolio-website/)
+
+## Copyright and use
+
+Copyright (c) George | benjoji77. All rights reserved.
+
+This project is shared for viewing and portfolio demonstration only. No permission is granted to copy, reuse, modify, redistribute, or republish this code, design, content, or assets without prior written permission.
 
 ## Run locally
 
