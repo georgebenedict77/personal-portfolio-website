@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://georgebenedict77.github.io/personal-portfolio-website/sitemap.xml
