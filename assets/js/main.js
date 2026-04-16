@@ -12,6 +12,63 @@ const form = qs("#form");
 const status = qs("#status");
 const intro = qs("#intro");
 const designCards = qsa(".gallery .media-card");
+const projectModal = qs("#projectModal");
+const projectModalKicker = qs("#projectModalKicker");
+const projectModalTitle = qs("#projectModalTitle");
+const projectModalText = qs("#projectModalText");
+const projectModalMeta = qs("#projectModalMeta");
+const projectModalLinks = qs("#projectModalLinks");
+const closeProjectModal = qs("#closeProjectModal");
+const calculatorDemo = qs("#calculatorDemo");
+const calcDisplay = qs("#calcDisplay");
+const projectTriggers = qsa(".project-trigger");
+// Add future projects here so each card can reuse the same popup layout.
+const projectData = {
+  "scientific-calculator": {
+    kicker: "Java desktop project",
+    title: "Scientific Calculator",
+    text:
+      "A practical Java calculator project focused on correct computation, cleaner input handling, and a simple but reliable user experience. This popup includes a lightweight web demo so visitors can interact with the idea immediately.",
+    meta: ["Java", "Desktop app", "Error handling", "Math logic"],
+    links: [
+      {
+        label: "View GitHub repo",
+        href: "https://github.com/georgebenedict77/scientific-calculator",
+      },
+    ],
+    calculator: true,
+  },
+  "payment-handling-system": {
+    kicker: "Java workflow project",
+    title: "Payment Handling System",
+    text:
+      "A Java project designed around multi-method payment flow. The goal is to model realistic business logic for M-Pesa, Airtel Money, card, and cash while keeping balances, receipts, and edge cases easy to follow.",
+    meta: ["Java", "Business logic", "Payment flow", "Receipts"],
+    links: [
+      {
+        label: "Ask for a walkthrough",
+        href: "#contact",
+      },
+    ],
+  },
+  "portfolio-website": {
+    kicker: "Frontend project",
+    title: "Personal Portfolio Website",
+    text:
+      "This site itself is a project: a responsive portfolio built to present work more professionally, feel more credible to recruiters and clients, and make future updates easier.",
+    meta: ["HTML", "CSS", "JavaScript", "Responsive UI"],
+    links: [
+      {
+        label: "View live site",
+        href: "https://georgebenedict77.github.io/personal-portfolio-website/",
+      },
+      {
+        label: "Contact about a similar build",
+        href: "#contact",
+      },
+    ],
+  },
+};
 const restoreState = () => {
   const skipIntro = sessionStorage.getItem("skipIntroOnce") === "1";
   const restoreScroll = sessionStorage.getItem("restoreDesignScroll") === "1";
@@ -119,3 +176,107 @@ form?.addEventListener("submit", (event) => {
   status.textContent = "Your email app should open with a ready-to-send draft.";
   status.classList.add("ok");
 });
+
+const renderProjectModal = (project) => {
+  if (!project) return;
+  projectModalKicker.textContent = project.kicker;
+  projectModalTitle.textContent = project.title;
+  projectModalText.textContent = project.text;
+  projectModalMeta.innerHTML = project.meta.map((item) => `<span>${item}</span>`).join("");
+  projectModalLinks.innerHTML = project.links
+    .map(
+      (link) =>
+        `<a class="btn btn-secondary" href="${link.href}"${
+          link.href.startsWith("http") ? ' target="_blank" rel="noopener noreferrer"' : ""
+        }>${link.label}</a>`
+    )
+    .join("");
+  calculatorDemo.hidden = !project.calculator;
+};
+
+const openProjectModal = (projectId) => {
+  renderProjectModal(projectData[projectId]);
+  calculatorExpression = "0";
+  updateCalculatorDisplay();
+  document.body.classList.add("modal-open");
+  projectModal?.classList.add("open");
+  projectModal?.setAttribute("aria-hidden", "false");
+};
+
+const closeModal = () => {
+  document.body.classList.remove("modal-open");
+  projectModal?.classList.remove("open");
+  projectModal?.setAttribute("aria-hidden", "true");
+};
+
+projectTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", () => openProjectModal(trigger.dataset.project));
+});
+
+closeProjectModal?.addEventListener("click", closeModal);
+qsa("[data-close-modal]").forEach((el) => el.addEventListener("click", closeModal));
+projectModalLinks?.addEventListener("click", (event) => {
+  const link = event.target.closest("a");
+  if (!link) return;
+  closeModal();
+});
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && projectModal?.classList.contains("open")) closeModal();
+});
+
+let calculatorExpression = "0";
+const updateCalculatorDisplay = () => {
+  if (calcDisplay) calcDisplay.value = calculatorExpression;
+};
+
+const evaluateExpression = () => {
+  try {
+    const safeExpression = calculatorExpression.replace(/[^0-9+\-*/.() ]/g, "");
+    const result = Function(`"use strict"; return (${safeExpression || 0})`)();
+    calculatorExpression = Number.isFinite(result) ? String(result) : "0";
+  } catch {
+    calculatorExpression = "0";
+  }
+  updateCalculatorDisplay();
+};
+
+const applyUnary = (fn) => {
+  let currentValue = 0;
+  try {
+    const safeExpression = calculatorExpression.replace(/[^0-9+\-*/.() ]/g, "");
+    currentValue = Number(Function(`"use strict"; return (${safeExpression || 0})`)());
+  } catch {
+    currentValue = 0;
+  }
+  const result = fn(currentValue);
+  calculatorExpression = Number.isFinite(result) ? String(result) : "0";
+  updateCalculatorDisplay();
+};
+
+qsa("[data-calc-value]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const value = button.dataset.calcValue;
+    calculatorExpression = calculatorExpression === "0" && ![".", "+", "-", "*", "/"].includes(value) ? value : calculatorExpression + value;
+    updateCalculatorDisplay();
+  });
+});
+
+qsa("[data-calc-action]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const action = button.dataset.calcAction;
+    if (action === "clear") calculatorExpression = "0";
+    if (action === "backspace") calculatorExpression = calculatorExpression.length > 1 ? calculatorExpression.slice(0, -1) : "0";
+    if (action === "equals") evaluateExpression();
+    if (action === "sqrt") applyUnary((value) => Math.sqrt(Math.max(0, value)));
+    if (action === "square") applyUnary((value) => value ** 2);
+    if (action === "sin") applyUnary((value) => Math.sin((value * Math.PI) / 180));
+    if (action === "cos") applyUnary((value) => Math.cos((value * Math.PI) / 180));
+    if (action === "tan") applyUnary((value) => Math.tan((value * Math.PI) / 180));
+    if (action === "pi") {
+      calculatorExpression = calculatorExpression === "0" ? String(Math.PI) : calculatorExpression + Math.PI;
+    }
+    updateCalculatorDisplay();
+  });
+});
+
+updateCalculatorDisplay();

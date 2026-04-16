@@ -189,7 +189,10 @@
               <li>Built as a practical learning project in software structure</li>
               <li>Useful example of reliable input handling</li>
             </ul>
-            <a class="card-link" href="https://github.com/georgebenedict77" target="_blank" rel="noopener noreferrer">View GitHub profile</a>
+            <div class="project-actions">
+              <button class="btn btn-secondary project-trigger" type="button" data-project="scientific-calculator">Open calculator</button>
+              <a class="btn btn-text" href="https://github.com/georgebenedict77/scientific-calculator" target="_blank" rel="noopener noreferrer">View repo</a>
+            </div>
           </article>
           <article class="card reveal">
             <div class="tags"><span class="tag">Java</span><span class="tag">Transaction flow</span></div>
@@ -200,7 +203,10 @@
               <li>Handles receipts, balances, and payment edge cases</li>
               <li>Demonstrates applied problem solving for business logic</li>
             </ul>
-            <a class="card-link" href="#contact">Discuss a similar build</a>
+            <div class="project-actions">
+              <button class="btn btn-secondary project-trigger" type="button" data-project="payment-handling-system">View details</button>
+              <a class="btn btn-text" href="#contact">Ask about this build</a>
+            </div>
           </article>
           <article class="card reveal">
             <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
@@ -211,11 +217,60 @@
               <li>Balances visual style with professional clarity</li>
               <li>Reflects both technical and creative strengths</li>
             </ul>
-            <a class="card-link" href="#contact">Request a walkthrough</a>
+            <div class="project-actions">
+              <button class="btn btn-secondary project-trigger" type="button" data-project="portfolio-website">Project details</button>
+              <a class="btn btn-text" href="https://georgebenedict77.github.io/personal-portfolio-website/" target="_blank" rel="noopener noreferrer">View live site</a>
+            </div>
           </article>
         </div>
       </div>
     </section>
+
+    <div class="project-modal" id="projectModal" aria-hidden="true">
+      <div class="project-modal-backdrop" data-close-modal></div>
+      <div class="project-modal-panel" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+        <button class="modal-close" id="closeProjectModal" type="button" aria-label="Close project details">Close</button>
+        <div class="head" style="margin-bottom:0;">
+          <span class="eyebrow" id="projectModalKicker">Project details</span>
+          <h3 id="projectModalTitle">Project</h3>
+          <p id="projectModalText"></p>
+        </div>
+        <div class="project-meta" id="projectModalMeta"></div>
+        <div class="calculator-demo" id="calculatorDemo" hidden>
+          <div class="calculator-shell">
+            <p class="project-note">Quick demo: this popup gives visitors a working calculator preview even though the original app was built in Java.</p>
+            <input class="calc-display" id="calcDisplay" type="text" value="0" readonly aria-label="Calculator display">
+            <div class="calc-grid">
+              <button type="button" data-calc-action="clear">C</button>
+              <button type="button" data-calc-action="backspace">DEL</button>
+              <button type="button" data-calc-action="sqrt">sqrt</button>
+              <button type="button" data-calc-value="/">/</button>
+              <button type="button" data-calc-action="sin">sin</button>
+              <button type="button" data-calc-action="cos">cos</button>
+              <button type="button" data-calc-action="tan">tan</button>
+              <button type="button" data-calc-value="*">*</button>
+              <button type="button" data-calc-value="7">7</button>
+              <button type="button" data-calc-value="8">8</button>
+              <button type="button" data-calc-value="9">9</button>
+              <button type="button" data-calc-value="-">-</button>
+              <button type="button" data-calc-value="4">4</button>
+              <button type="button" data-calc-value="5">5</button>
+              <button type="button" data-calc-value="6">6</button>
+              <button type="button" data-calc-value="+">+</button>
+              <button type="button" data-calc-value="1">1</button>
+              <button type="button" data-calc-value="2">2</button>
+              <button type="button" data-calc-value="3">3</button>
+              <button class="calc-accent" type="button" data-calc-action="equals">=</button>
+              <button type="button" data-calc-action="pi">pi</button>
+              <button type="button" data-calc-value="0">0</button>
+              <button type="button" data-calc-value=".">.</button>
+              <button type="button" data-calc-action="square">x2</button>
+            </div>
+          </div>
+        </div>
+        <div class="project-modal-links" id="projectModalLinks"></div>
+      </div>
+    </div>
 
     <section class="section" id="design-samples">
       <div class="wrap">
