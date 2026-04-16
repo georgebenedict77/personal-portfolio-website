@@ -124,6 +124,8 @@ textarea{min-height:160px;resize:vertical}
 .media-card .media-body p{font-size:.9rem}
 .logo-badge{width:120px;height:120px;border-radius:18px;border:1px solid var(--line2);background:rgba(0,0,0,.6);padding:10px;display:grid;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.4)}
 .logo-badge img{width:100%;height:100%;object-fit:contain}
+.project-cover{margin:-.2rem -.2rem 1.15rem;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.06);background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01))}
+.project-cover img{width:100%;height:220px;display:block;object-fit:cover;transform:scale(1.01)}
 .project-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.3rem}
 .project-actions .btn{min-height:3rem}
 .project-modal{position:fixed;inset:0;z-index:140;display:none}
@@ -131,6 +133,8 @@ textarea{min-height:160px;resize:vertical}
 .project-modal-backdrop{position:absolute;inset:0;background:rgba(4,8,14,.78);backdrop-filter:blur(12px)}
 .project-modal-panel{position:relative;z-index:1;width:min(760px,calc(100% - 1.4rem));max-height:min(88vh,920px);overflow:auto;padding:1.3rem;border:1px solid var(--line2);border-radius:24px;background:linear-gradient(180deg,rgba(16,23,36,.98),rgba(11,15,22,.98));box-shadow:0 32px 80px rgba(0,0,0,.48)}
 .modal-close{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;min-height:2.8rem;padding:.7rem 1rem;border-radius:999px;border:1px solid var(--line2);background:rgba(255,255,255,.03);font-weight:800}
+.project-modal-visual{margin-top:1.3rem;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02)}
+.project-modal-visual img{width:100%;height:250px;display:block;object-fit:cover}
 .project-meta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.2rem}
 .project-meta span{display:inline-flex;align-items:center;min-height:2rem;padding:.2rem .75rem;border-radius:999px;border:1px solid var(--line);background:rgba(201,167,94,.08);color:var(--gold2);font-size:.82rem;font-weight:800}
 .project-modal-links{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.3rem}
@@ -156,6 +160,7 @@ textarea{min-height:160px;resize:vertical}
   .panel,.card,.contact-card,.form-wrap{padding:1.25rem}
   .facts,.mini-grid{grid-template-columns:1fr}
   .chip{display:none}
+  .project-cover img,.project-modal-visual img{height:200px}
   .project-modal-panel{padding:1rem}
 }
 @media (prefers-reduced-motion:reduce){

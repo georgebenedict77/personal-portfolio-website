@@ -1,0 +1,52 @@
+<svg width="1200" height="780" viewBox="0 0 1200 780" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="780" rx="40" fill="#09111B"/>
+  <circle cx="199" cy="166" r="250" fill="#C9A75E" fill-opacity="0.14"/>
+  <circle cx="1016" cy="665" r="254" fill="#E5564D" fill-opacity="0.12"/>
+  <rect x="94" y="89" width="1012" height="602" rx="34" fill="#101928" stroke="#3D2E18" stroke-width="2"/>
+  <rect x="94" y="89" width="1012" height="70" rx="34" fill="#141F31"/>
+  <circle cx="145" cy="124" r="9" fill="#E5564D"/>
+  <circle cx="176" cy="124" r="9" fill="#C9A75E"/>
+  <circle cx="207" cy="124" r="9" fill="#7BC69D"/>
+  <rect x="155" y="206" width="890" height="118" rx="22" fill="#081019" stroke="#22354A"/>
+  <text x="964" y="280" fill="#F0DDAD" font-family="Arial, sans-serif" font-size="60" text-anchor="end">sin(45) + 12²</text>
+  <text x="962" y="248" fill="#7F8A99" font-family="Arial, sans-serif" font-size="24" text-anchor="end">Scientific mode</text>
+  <g>
+    <rect x="155" y="359" width="150" height="82" rx="18" fill="#152132"/>
+    <rect x="323" y="359" width="150" height="82" rx="18" fill="#152132"/>
+    <rect x="491" y="359" width="150" height="82" rx="18" fill="#152132"/>
+    <rect x="659" y="359" width="150" height="82" rx="18" fill="#152132"/>
+    <rect x="827" y="359" width="218" height="82" rx="18" fill="#C9A75E"/>
+    <rect x="155" y="457" width="150" height="82" rx="18" fill="#152132"/>
+    <rect x="323" y="457" width="150" height="82" rx="18" fill="#152132"/>
+    <rect x="491" y="457" width="150" height="82" rx="18" fill="#152132"/>
+    <rect x="659" y="457" width="150" height="82" rx="18" fill="#152132"/>
+    <rect x="827" y="457" width="218" height="180" rx="18" fill="url(#accentCalc)"/>
+    <rect x="155" y="555" width="150" height="82" rx="18" fill="#152132"/>
+    <rect x="323" y="555" width="150" height="82" rx="18" fill="#152132"/>
+    <rect x="491" y="555" width="150" height="82" rx="18" fill="#152132"/>
+    <rect x="659" y="555" width="150" height="82" rx="18" fill="#152132"/>
+  </g>
+  <g fill="#EEF2F7" font-family="Arial, sans-serif" font-size="34" font-weight="700">
+    <text x="230" y="411" text-anchor="middle">sin</text>
+    <text x="398" y="411" text-anchor="middle">cos</text>
+    <text x="566" y="411" text-anchor="middle">tan</text>
+    <text x="734" y="411" text-anchor="middle">√</text>
+    <text x="936" y="411" text-anchor="middle" fill="#081019">x²</text>
+    <text x="230" y="509" text-anchor="middle">7</text>
+    <text x="398" y="509" text-anchor="middle">8</text>
+    <text x="566" y="509" text-anchor="middle">9</text>
+    <text x="734" y="509" text-anchor="middle">÷</text>
+    <text x="230" y="607" text-anchor="middle">4</text>
+    <text x="398" y="607" text-anchor="middle">5</text>
+    <text x="566" y="607" text-anchor="middle">6</text>
+    <text x="734" y="607" text-anchor="middle">×</text>
+    <text x="936" y="563" text-anchor="middle" fill="#081019">=</text>
+  </g>
+  <text x="156" y="128" fill="#F0DDAD" font-family="Arial, sans-serif" font-size="28" font-weight="700">Scientific Calculator</text>
+  <defs>
+    <linearGradient id="accentCalc" x1="827" y1="457" x2="1045" y2="637" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C9A75E"/>
+      <stop offset="1" stop-color="#E5564D"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -16,6 +16,7 @@ const projectModal = qs("#projectModal");
 const projectModalKicker = qs("#projectModalKicker");
 const projectModalTitle = qs("#projectModalTitle");
 const projectModalText = qs("#projectModalText");
+const projectModalImage = qs("#projectModalImage");
 const projectModalMeta = qs("#projectModalMeta");
 const projectModalLinks = qs("#projectModalLinks");
 const closeProjectModal = qs("#closeProjectModal");
@@ -29,6 +30,8 @@ const projectData = {
     title: "Scientific Calculator",
     text:
       "A practical Java calculator project focused on correct computation, cleaner input handling, and a simple but reliable user experience. This popup includes a lightweight web demo so visitors can interact with the idea immediately.",
+    image: "assets/img/project-scientific-calculator.svg",
+    imageAlt: "Preview illustration for the Scientific Calculator project",
     meta: ["Java", "Desktop app", "Error handling", "Math logic"],
     links: [
       {
@@ -43,6 +46,8 @@ const projectData = {
     title: "Payment Handling System",
     text:
       "A Java project designed around multi-method payment flow. The goal is to model realistic business logic for M-Pesa, Airtel Money, card, and cash while keeping balances, receipts, and edge cases easy to follow.",
+    image: "assets/img/project-payment-system.svg",
+    imageAlt: "Preview illustration for the Payment Handling System project",
     meta: ["Java", "Business logic", "Payment flow", "Receipts"],
     links: [
       {
@@ -56,6 +61,8 @@ const projectData = {
     title: "Personal Portfolio Website",
     text:
       "This site itself is a project: a responsive portfolio built to present work more professionally, feel more credible to recruiters and clients, and make future updates easier.",
+    image: "assets/img/project-portfolio-website.svg",
+    imageAlt: "Preview illustration for the Personal Portfolio Website project",
     meta: ["HTML", "CSS", "JavaScript", "Responsive UI"],
     links: [
       {
@@ -182,6 +189,10 @@ const renderProjectModal = (project) => {
   projectModalKicker.textContent = project.kicker;
   projectModalTitle.textContent = project.title;
   projectModalText.textContent = project.text;
+  if (projectModalImage) {
+    projectModalImage.src = project.image;
+    projectModalImage.alt = project.imageAlt;
+  }
   projectModalMeta.innerHTML = project.meta.map((item) => `<span>${item}</span>`).join("");
   projectModalLinks.innerHTML = project.links
     .map(
