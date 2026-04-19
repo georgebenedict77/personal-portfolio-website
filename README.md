@@ -14,6 +14,13 @@ A responsive personal portfolio website for George (`benjoji77`), a Computer Sci
 - Direct contact area with email shortcuts and quick outreach flow
 - GitHub Pages deployment for simple public hosting
 
+## New Project Added
+
+- **Notepad Desktop App (Java Swing)**
+- One-class ActionListener methodology with real notepad workflow
+- Features include file handling, editing tools, find/replace, word wrap, and status bar
+- Source branch: [notepad-desktop-app](https://github.com/georgebenedict77/personal-portfolio-website/tree/notepad-desktop-app)
+
 ## Tech stack
 
 - HTML
