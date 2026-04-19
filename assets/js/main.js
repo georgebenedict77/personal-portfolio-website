@@ -46,8 +46,9 @@ const projectData = {
     title: "Notepad Desktop App",
     text:
       "A Java Swing notepad desktop application built around clean text editing, document actions, and simple file handling. It shows desktop UI structure, event-driven logic, and the kind of practical productivity software I enjoy building.",
-    image: "assets/img/project-notepad.svg",
-    imageAlt: "Interface preview for the Notepad Desktop App project",
+    image: "assets/img/project-notepad-main.png",
+    imageAlt: "Screenshot of the Notepad Desktop App main editor",
+    fit: "contain",
     meta: ["Java", "Swing UI", "Desktop app", "File handling"],
     links: [
       {
@@ -211,6 +212,7 @@ const renderProjectModal = (project) => {
   if (projectModalImage) {
     projectModalImage.src = project.image;
     projectModalImage.alt = project.imageAlt;
+    projectModalImage.classList.toggle("project-image-contain", project.fit === "contain");
   }
   projectModalMeta.innerHTML = project.meta.map((item) => `<span>${item}</span>`).join("");
   projectModalLinks.innerHTML = project.links
