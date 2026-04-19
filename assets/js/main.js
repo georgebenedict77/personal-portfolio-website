@@ -41,6 +41,25 @@ const projectData = {
     ],
     calculator: true,
   },
+  "notepad-desktop-app": {
+    kicker: "Java desktop project",
+    title: "Notepad Desktop App",
+    text:
+      "A Java Swing notepad desktop application built around clean text editing, document actions, and simple file handling. It shows desktop UI structure, event-driven logic, and the kind of practical productivity software I enjoy building.",
+    image: "assets/img/project-notepad.svg",
+    imageAlt: "Interface preview for the Notepad Desktop App project",
+    meta: ["Java", "Swing UI", "Desktop app", "File handling"],
+    links: [
+      {
+        label: "View GitHub repo",
+        href: "https://github.com/georgebenedict77/notepad-desktop-app",
+      },
+      {
+        label: "Ask for a walkthrough",
+        href: "#contact",
+      },
+    ],
+  },
   "payment-handling-system": {
     kicker: "Java workflow project",
     title: "Payment Handling System",

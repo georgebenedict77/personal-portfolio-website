@@ -1,0 +1,47 @@
+<svg width="1200" height="780" viewBox="0 0 1200 780" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="780" rx="40" fill="#09111A"/>
+  <rect x="84" y="76" width="1032" height="628" rx="30" fill="#101928" stroke="#23374B" stroke-width="2"/>
+  <rect x="84" y="76" width="1032" height="64" rx="30" fill="#131E2F"/>
+  <circle cx="132" cy="108" r="8" fill="#E5564D"/>
+  <circle cx="160" cy="108" r="8" fill="#C9A75E"/>
+  <circle cx="188" cy="108" r="8" fill="#7BC69D"/>
+  <text x="224" y="116" fill="#F0DDAE" font-family="Arial, sans-serif" font-size="26" font-weight="700">Notepad Desktop App</text>
+  <rect x="122" y="170" width="236" height="494" rx="24" fill="#141F31"/>
+  <text x="154" y="212" fill="#9CA8B8" font-family="Arial, sans-serif" font-size="18" font-weight="700">Files</text>
+  <rect x="150" y="236" width="180" height="58" rx="16" fill="#1C2B40"/>
+  <rect x="150" y="308" width="180" height="58" rx="16" fill="#101A28"/>
+  <rect x="150" y="380" width="180" height="58" rx="16" fill="#101A28"/>
+  <g fill="#EEF2F7" font-family="Arial, sans-serif" font-size="20" font-weight="700">
+    <text x="240" y="271" text-anchor="middle">notes.txt</text>
+    <text x="240" y="343" text-anchor="middle">ideas.txt</text>
+    <text x="240" y="415" text-anchor="middle">draft.txt</text>
+  </g>
+  <rect x="390" y="170" width="686" height="84" rx="24" fill="#141F31"/>
+  <rect x="422" y="194" width="92" height="36" rx="14" fill="#1E3045"/>
+  <rect x="528" y="194" width="92" height="36" rx="14" fill="#1E3045"/>
+  <rect x="634" y="194" width="92" height="36" rx="14" fill="#1E3045"/>
+  <rect x="944" y="194" width="100" height="36" rx="14" fill="url(#notepadAccent)"/>
+  <g fill="#EEF2F7" font-family="Arial, sans-serif" font-size="18" font-weight="700">
+    <text x="468" y="217" text-anchor="middle">New</text>
+    <text x="574" y="217" text-anchor="middle">Open</text>
+    <text x="680" y="217" text-anchor="middle">Save</text>
+    <text x="994" y="217" text-anchor="middle" fill="#081019">Export</text>
+  </g>
+  <rect x="390" y="278" width="686" height="386" rx="24" fill="#0D141F"/>
+  <text x="430" y="326" fill="#F0DDAE" font-family="Arial, sans-serif" font-size="22" font-weight="700">Meeting notes</text>
+  <rect x="430" y="350" width="606" height="2" fill="#24384B"/>
+  <g fill="#AAB6C5" font-family="Arial, sans-serif" font-size="22">
+    <text x="430" y="394">Project planning for internship portfolio refresh</text>
+    <text x="430" y="438">- Review current GitHub projects</text>
+    <text x="430" y="478">- Add new Notepad desktop app to showcase</text>
+    <text x="430" y="518">- Improve wording for recruiters and clients</text>
+    <text x="430" y="558">- Keep the interface simple and readable</text>
+  </g>
+  <rect x="430" y="598" width="4" height="32" fill="#C9A75E"/>
+  <defs>
+    <linearGradient id="notepadAccent" x1="944" y1="194" x2="1044" y2="230" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C9A75E"/>
+      <stop offset="1" stop-color="#E5564D"/>
+    </linearGradient>
+  </defs>
+</svg>
